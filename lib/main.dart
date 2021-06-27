@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gerencia_de_estado/gerencia_de_estado.dart';
+import 'package:gerencia_de_estado/home_controller.dart';
 
 void main() {
   runApp(MyApp());
@@ -28,11 +29,10 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  late GerenciaDeEstado<int> controller;
+  final HomeController controller = HomeController();
 
   @override
   void initState() {
-    controller = GerenciaDeEstado<int>(initialState: 0);
     controller.listen((state) {
       setState(() {});
     });
