@@ -28,11 +28,11 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final controller = GerenciaDeEstado();
+  late GerenciaDeEstado<int> controller;
 
   @override
   void initState() {
-    controller.setState(0);
+    controller = GerenciaDeEstado<int>(initialState: 0);
     controller.listen((state) {
       setState(() {});
     });
