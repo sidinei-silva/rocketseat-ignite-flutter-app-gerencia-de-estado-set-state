@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gerencia_de_estado/count_widget.dart';
 import 'package:gerencia_de_estado/gerencia_de_estado.dart';
 import 'package:gerencia_de_estado/home_controller.dart';
 
@@ -52,10 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               'You have pushed the button this many times:',
             ),
-            Text(
-              '${controller.state}',
-              style: Theme.of(context).textTheme.headline4,
-            ),
+            CountWidget(value: controller.state)
           ],
         ),
       ),
