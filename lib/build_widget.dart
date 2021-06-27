@@ -13,10 +13,10 @@ class BuilderWidget<T> extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _BuilderWidgetState createState() => _BuilderWidgetState();
+  _BuilderWidgetState<T> createState() => _BuilderWidgetState<T>();
 }
 
-class _BuilderWidgetState extends State<BuilderWidget> {
+class _BuilderWidgetState<T> extends State<BuilderWidget<T>> {
   @override
   void initState() {
     widget.controller.listen((state) {
@@ -27,6 +27,6 @@ class _BuilderWidgetState extends State<BuilderWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return widget.builder(context, widget.controller.state);
+    return widget.builder(context, widget.controller.state as T);
   }
 }
