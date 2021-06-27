@@ -33,14 +33,6 @@ class _MyHomePageState extends State<MyHomePage> {
   final HomeController controller = HomeController();
 
   @override
-  void initState() {
-    controller.listen((state) {
-      setState(() {});
-    });
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -53,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               'You have pushed the button this many times:',
             ),
-            CountWidget(value: controller.state)
+            CountWidget(controller: controller)
           ],
         ),
       ),
