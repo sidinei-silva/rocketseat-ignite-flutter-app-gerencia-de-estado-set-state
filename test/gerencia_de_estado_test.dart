@@ -9,11 +9,22 @@ void main() {
   });
 
   test("Testando a genrencia de estado", () {
+    final valueStateFirst = "Alterado";
+    final valueStateFinal = "Alterado2";
+
     expect(controller.state, isNull);
+
     controller.listen((state) {
-      expect(controller.state, "Alterado");
+      print("Listen 1 $state");
     });
-    controller.setState("Alterado");
-    expect(controller.state, "Alterado");
+
+    controller.setState(valueStateFirst);
+
+    controller.listen((state) {
+      print("Listen 2 $state");
+    });
+
+    controller.setState(valueStateFinal);
+    expect(controller.state, valueStateFinal);
   });
 }
