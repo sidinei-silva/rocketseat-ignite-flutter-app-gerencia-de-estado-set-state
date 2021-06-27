@@ -1,4 +1,4 @@
-class GerenciaDeEstado<T> {
+abstract class GerenciaDeEstado<T> {
   late T _state;
   var _listens = <Function(T state)>[];
 
